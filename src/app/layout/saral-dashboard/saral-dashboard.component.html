@@ -1,0 +1,19 @@
+<div class="flex h-full relative">
+  <!-- Sidebar -->
+   <div class="w-64 p-4 border border-r-2 h-full overflow-auto bg-slate-200">
+     <app-saral-sidebar></app-saral-sidebar>
+   </div>
+  
+  <!-- Main Content Area -->
+  <div class="flex flex-col flex-1 p-4">
+    <!-- Header -->
+     <div>
+       <app-saral-header class="w-full"></app-saral-header>
+     </div>
+
+    <!-- Main Content with Scroll -->
+    <main class="flex-1 h-auto overflow-auto">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

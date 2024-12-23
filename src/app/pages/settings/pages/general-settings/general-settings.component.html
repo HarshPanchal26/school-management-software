@@ -1,0 +1,29 @@
+<div class="container mx-auto px-6 py-10 space-y-10">
+    <!-- School Details Form -->
+    <div class="bg-white shadow-lg rounded-lg p-8 border">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">School Details</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <app-form-field label="School Name" fieldType="text" placeholder="Enter school name" [regex]="usernameRegex"
+                (valueChange)="onValueChange($event, '')" (isValid)="validateInput($event, '')"></app-form-field>
+            <app-form-field label="Established Year" fieldType="number" placeholder="Enter established year"
+                [regex]="usernameRegex" (valueChange)="onValueChange($event, '')"
+                (isValid)="validateInput($event, '')"></app-form-field>
+            <app-form-field label="School Type" fieldType="select" [options]="['Public', 'Private', 'Charter']"
+                [regex]="usernameRegex" (valueChange)="onValueChange($event, '')"
+                (isValid)="validateInput($event, '')"></app-form-field>
+            <app-form-field label="Student Capacity" fieldType="number" placeholder="Enter student capacity"
+                [regex]="usernameRegex" (valueChange)="onValueChange($event, '')"
+                (isValid)="validateInput($event, '')"></app-form-field>
+        </div>
+        <app-form-field label="School Description" fieldType="textarea" placeholder="Enter school description"
+            (valueChange)="onValueChange($event, '')" (isValid)="validateInput($event, '')"></app-form-field>
+        <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+            (click)="onSubmitSchoolDetails()"
+            [disabled]="!areFormDetailValid" 
+            >
+            Save School Details
+        </button>
+    </div>
+
+</div>
